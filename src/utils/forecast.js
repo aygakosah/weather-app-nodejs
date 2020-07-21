@@ -9,7 +9,7 @@ const forecast= (long, lat, callback)=>{
             callback("Unable to retrieve the indicated data", undefined)
         }else{
             callback(undefined, {
-                temperature:`${body.current.weather_descriptions[0]}. It is currently ${body.current.temperature} degrees.`,
+                temperature:`${body.current.weather_descriptions[0]}. It is currently ${body.current.temperature} degrees. However, it feels like ${body.current.feelslike} degrees. The humidity is ${body.current.humidity}`,
                 location: `${body.location.name}, ${body.location.region}, ${body.location.country}`
             })
         }
